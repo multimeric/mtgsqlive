@@ -6,11 +6,6 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 
 def execute(json_input: Path, output_file: Path) -> None:
-    """Main function to handle the logic
-    :param json_input: Input file (JSON)
-    :param output_file: Output dir
-    :param extras: additional json files to process
-    """
     with json_input.open() as fp:
         parsed = json.load(fp)
     entities = list(parsed["data"].values())
